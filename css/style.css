@@ -1,0 +1,14 @@
+/*CSS erlaubt es die Darstellung von Elementen zu verändern */
+body{
+    color: whitesmoke; /*Textfarbe auf weiß setzen*/
+}
+/* Klasse zum verbergen von Elementen*/
+.hidden {
+display: none ; /*Eingeschaft: Wert der Eingenschaft*/
+}
+
+.container { 
+    width: 600px;
+    margin:0 auto; /* Zentriert Inhlate */
+    background-color: #026a9f;
+}
