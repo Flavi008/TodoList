@@ -85,20 +85,41 @@ while($row=$result->fetch_assoc()){   // Ergebnis zeilenweise auslesen
 </head>
 <body>
 
-
-<!--Alles horizontal zentrieren in Container (im Css)--> 
+<header class="section">
     <div class="container">
+    <h1> Flavi's Todo Liste </h1>
+</div>
+</header>
 
-   <!--Input zum speichern von Todo auf server -->
- <form  action="" method="post">
-    <label for="bezeichnung">Bezeichnung </label>
+
+ <!--Abschnitt 1: Todo speichern -->
+<section class="input-todo">
+    <div class="container">
+        <h2>
+            Neues Todo anlegen
+</h2>
+ <!--Input zum speichern von Todo auf server -->
+ <form class="form" action="" method="post">
+ <!--Eine Zeile in Todo Form -->
+    <div class="form-row">
+    <label  class="form-label"for="bezeichnung">Bezeichnung </label>
     <input type="text" name="bezeichnung"/>
-    <label for="faelligkeit">Faelligkeit  </label>
+    </div>
+ <!--Eine Zeile in Todo Form -->
+    <div class="form-row">
+    <label  class="form-label"for="faelligkeit">Faelligkeit  </label>
     <input id="faelligkeit" type="date" name="faelligkeit" required/>
-    <input type="submit" value="Todo speichern" name="add"/>
+    </div>
+
+   <input  class="form-button button" type="submit" value="Todo speichern" name="add"/>
 </form>
 
+</div>
+</section>
 
+ <!--Abschnitt 2: Todos in Tabelle anzeigen -->
+ <section>
+    <div class="container">
 
 <!-- Tabelle von Todos -->
 <table>
@@ -154,7 +175,7 @@ if ($todo["status"] == 1) {
   <form action="" method="post" style="display: inline;">
   <input type="hidden" name="id" value="<?php echo $todo["id"]?>"/>
    <!--Button--> 
-    <input type="submit" name="delete" value="Delete"/>
+    <input  class="button" type="submit" name="delete" value="Delete"/>
 
 </form>
 </td>
@@ -163,29 +184,41 @@ if ($todo["status"] == 1) {
   <form action="" method="post" style="display: inline;">
   <input type="hidden" name="id" value="<?php echo $todo["id"]?>"/>
    <!--Button--> 
-    <input type="submit" name="done" value="Done"/> 
+    <input class="button" type="submit" name="done" value="Done"/> 
 </form>
 </td>
 </tr>
     <?php endforeach; ?>
 </tbody>
 </table>
-<p>
+
+<!-- Funktion einblenden/ausblenden erledigte Todos -->
+<div>
+      <label>Erledigte Todos einblenden:</label>
+      <input type="checkbox" id="showCompleted"/>
+    </div>
+
+
+</div>
+</section>
+
+ <!--Abschnitt: 3 : Todos zählen--> 
+<section>
+    <div class="container">
+    <p>
     Anzahl der Todos (inkl.erledigt): <?php echo count ($todos); ?>
 </p>
-
-<!-- Funktion einblenden/ausblenden erledigte Todos --> 
-<div>
-<label>Erledigte Todos einblenden:</label>
-<input type="checkbox" id="showCompleted"/>
 </div>
-</div>
-
-
+</section>
 
  <!--JavaScript das auf Checkbox reargiert und Klasse hidden bei erledigten Todos hinzufügt und entfernt--> 
  <!--JavaSript wird vom Broweser ausgegührt --> 
  <!--JavaSript Datei einbinden --> 
 <script type="text/javascript" src="js/toggleTodos.js"> </script>
+
+<footer>
+<h3>&rarr; HFH 2024 &copy by FP😊<h3>
+</footer>
+
 </body>
 </html>

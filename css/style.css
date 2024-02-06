@@ -1,14 +1,74 @@
+/*Global Reset ->Browser fügt sonst Margins hinzu */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*Box Model auf broder box */
+}
+
 /*CSS erlaubt es die Darstellung von Elementen zu verändern */
-body{
-    color: whitesmoke; /*Textfarbe auf weiß setzen*/
+body {
+  color: whitesmoke; /*Textfarbe auf weiß setzen*/
+  background-image: url("../img/post-img.jpg");
 }
 /* Klasse zum verbergen von Elementen*/
 .hidden {
-display: none ; /*Eingeschaft: Wert der Eingenschaft*/
+  display: none; /*Eingeschaft: Wert der Eingenschaft*/
 }
 
-.container { 
-    width: 600px;
-    margin:0 auto; /* Zentriert Inhlate */
-    background-color: #026a9f;
+.container {
+  width: 600px;
+  margin: 0 auto; /* Zentriert Inhlate */
+  background-color: #026a9f;
+
+  padding-inline: 40px; /* Abstand von Rand zu Inhalt*/
+  padding-block: 20px; /*Abstand von Ihnalte zu Rand oben und unten*/
+}
+
+.form {
+  display: flex; /* Modus zum platieren von Eementen*/
+  flex-direction: column; /* In einer Spalte untereinander platzieren*/
+  gap: 10px; /*Abstand zwischen Elementen /Zeilen*/
+}
+
+/* linksbünding positionieren(felx-direction ist row)*/
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-label {
+  display: inline-block; /*Anschlaten so dass Breite von Label eingestellt werden kann*/
+  width: 120px; /* Breite */
+}
+
+/*Todo speichern-Button*/
+.form-button {
+  width: 150px;
+}
+
+/* Alle Buttons und die Farbe*/
+.button {
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 9px; /*Runde Ecken Buttons*/
+}
+
+table {
+  /* Jedes tabel HTML-Element wird ausgewählt*/
+  border-collapse: collapse; /* Zeichnet Umrandung nur einfach*/
+  width: 100%; /*Breite der tabelle zu 100% conatiner Breite*/
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  /* Alle th und td Emelemente in index.php*/
+  border: 1px solid;
+  text-align: left;
+  padding: 12px; /*Abstand um Inhalte*/
+}
+
+/*alle th Elemente (Bez., Faell., Stat.*/
+th {
+  font-weight: bold;
 }

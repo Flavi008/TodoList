@@ -1,3 +1,5 @@
+DROP TABLE Todo;
+
 -- Datenbanktabelle für Todos
 CREATE TABLE Todo (
     id VARCHAR(30) PRIMARY KEY,
